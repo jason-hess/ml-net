@@ -9,7 +9,7 @@ namespace ML.NET.TransactionAnomalies
 {
     class Program
     {
-        static readonly string _dataPath = Path.Combine(@"C:\Users\aujasonh\OneDrive\@Project - Knowledge Sharing - ML.NET\sales.anomoly.csv");
+        static readonly string _dataPath = Path.Combine(@"C:\Users\aujasonh\OneDrive\@Project - Knowledge Sharing - ML.NET\export-8d935430f2de76f.csv");
 
         static void Main(string[] args)
         {
@@ -34,7 +34,7 @@ namespace ML.NET.TransactionAnomalies
                 Threshold = 0.3,
                 Sensitivity = 64.0,
                 DetectMode = SrCnnDetectMode.AnomalyAndMargin,
-                Period = period
+                Period = 1
             };
             var outputDataView = mlContext.AnomalyDetection.DetectEntireAnomalyBySrCnn(phoneCalls, nameof(PhoneCallsPrediction.Prediction), nameof(PhoneCallsData.value), options);
             var predictions = mlContext.Data.CreateEnumerable<PhoneCallsPrediction>(
